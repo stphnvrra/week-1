@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+            <div>
+                <div class="position-absolute" style="top: 15px; right: 15px;">
+                    <img src="{{ url_for('static', filename=user.image_url) }}" alt="{{ user.name }}" class="img-fluid" style="max-width: 200px; max-height: 200px;">
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-10" style="font-size: 30px;">
+                        <h3 class="mb-2">Name: {{ user.name }}</h3>
+                        <p class="mb-1">Age: {{ user.age }} years old</p>
+                        <p>Address: {{ user.address }}</p>
+                    </div>
+                </div>
+                
+                <div class="mt-3 text-center">
+                    <a href="{{ url_for('logout') }}" class="btn btn-sm btn-danger">Logout</a>
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock %} 
